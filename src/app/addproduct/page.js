@@ -15,18 +15,18 @@ export default function Page(){
     })
 
     const AddProduct = async()=>{ 
-      let products = await fetch("http://localhost:3000/api/products",{
+      let products = await fetch("/api/products",{
         method:"get",
       })
       products = await products.json();      
       
       let res;
-   if(products.result.length >= 3){
+   if(products.result.length > 3){
         alert('products sotrage limit exceeded');
         router.push('/productlist')
       }
    else{
-       const result = await fetch("http://localhost:3000/api/products",{
+       const result = await fetch("/api/products",{
          method:"post",
          body: JSON.stringify(product)
        })

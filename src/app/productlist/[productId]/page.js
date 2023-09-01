@@ -16,7 +16,7 @@ export default function Page(props){
         company:""
     })
     const UpdateProduct = async()=>{    
-       const result = await fetch("http://localhost:3000/api/products/"+id,{
+       const result = await fetch("/api/products/"+id,{
          method:"put",
          body: JSON.stringify(product)
        })
@@ -34,7 +34,7 @@ export default function Page(props){
     },[])
 
     const setProductDetail = async()=>{
-      let res = await fetch("http://localhost:3000/api/products/"+id,{
+      let res = await fetch("/api/products/"+id,{
         method:"get"
      })
      res = await res.json()

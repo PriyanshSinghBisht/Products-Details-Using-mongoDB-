@@ -3,13 +3,14 @@
 import { useRouter } from "next/navigation"
 
 
-export default function Delete({id}){
+export default function Delete({id, deleted}){
      const router = useRouter();   
     const Delete = async()=>{
-        let res = await fetch("http://localhost:3000/api/products/"+id,{
+        let res = await fetch("/api/products/"+id,{
             method:"delete"
         })
          alert("product is deleted")
+         deleted();
          router.push('/productlist')
     }
     return(
