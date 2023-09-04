@@ -6,7 +6,7 @@ import TableContent from "./listContent";
 import TableLoading from "@/components/TableLoading";
 const getData = async()=>{
 
-    let data = await fetch("http://localhost:3000/api/products",{
+    let data = await fetch(`/api/products`,{
         method: "GET",
         next:{revalidate: 0}
       })
