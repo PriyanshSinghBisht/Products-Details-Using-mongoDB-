@@ -12,7 +12,24 @@
     border: 1px solid black;
     
 }
+/*loading effect */
 
+.loading{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-left: 3px solid white;
+    animation: spinner 0.5s infinite;
+}
+
+@keyframes spinner {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 .addproduct input{
     padding: 5px;
     border: 1px solid black;

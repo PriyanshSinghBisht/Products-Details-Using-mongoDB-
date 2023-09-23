@@ -41,7 +41,7 @@ export default function Page(){
             <Nav/>
             <div className="w-full bdr">
             <h1>Product List</h1>
-               <Suspense fallback={TableLoading}>
+               <Suspense fallback={ <TableLoading/> }>
                   <TableContent products={products} deleted={deleted} />
                   </Suspense>
             </div>

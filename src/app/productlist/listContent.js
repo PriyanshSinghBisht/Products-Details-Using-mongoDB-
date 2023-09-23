@@ -1,10 +1,13 @@
 import Delete from "@/utils/delete"
 import Link from "next/link"
 
-export default function TableContent({products, deleted}){
+export default async function TableContent({products, deleted}){
+         await new Promise(function(resolve){
+            setTimeout(()=>{resolve();} , 400)
+          })
     return(
         <>
-               <table border={1} className="w-full" >
+               <table border={1} className="w-full">
                                 <thead>
                                     <tr>
                                     <th>Name</th>
